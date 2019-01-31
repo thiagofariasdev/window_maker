@@ -1,0 +1,24 @@
+{
+  "name": "el-native",
+  "version": "0.0.1",
+  "description": "first electron app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "electron ."
+  },
+  "keywords": [
+    "electron",
+    "app",
+    "test",
+    "treining"
+  ],
+  "author": "tiagofariasdev",
+  "license": "ISC",
+  "dependencies": {
+    "bootstrap": "^4.2.1",
+    "electron": "^4.0.3",
+    "jquery": "^3.3.1",
+    "popper.js": "^1.14.7"
+  }
+}
