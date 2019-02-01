@@ -20,7 +20,7 @@ export default class Routes extends Component {
     }
     _menu(i, id){
         return (
-            <button onClick={() => this.setState({curl:i.cur})}>
+            <button className="btn btn-dark" onClick={() => this.setState({curl:i.cur})}>
                 <span>{i.label}</span>
             </button>
         )
