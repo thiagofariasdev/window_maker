@@ -11,10 +11,6 @@ icon = url.format({
     pathname: path.join(res, 'icon', 'blue_circle.png'),
     protocol: 'file:'
 });
-// screen = url.format({
-//     pathname: path.join(dpi, 'build/index.html'),
-//     protocol: 'file:'
-// });
 
 app.on('ready', ()=>{
     mw = new BrowserWindow({ minWidth: 800, minHeight: 600, frame:true });
