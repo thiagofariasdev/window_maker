@@ -9,9 +9,64 @@
         padding: 0;
         font-family:Arial, Helvetica, sans-serif;
       }
+      *::selection{
+        background-color: transparent;
+      }
+      span{
+        cursor: default;
+      }
+      header{
+        display: flex !important;
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+        background-color: #00433b;
+        width: 100%;
+      }
+      .btns{
+        display: flex !important;
+        flex-direction: row-reverse;
+        align-items: flex-end;
+      }
+      .option{
+        font-size: 20px;
+        padding: 0;
+        padding-left:15px;
+        padding-right:15px;
+        margin: 0;
+        color: rgb(255, 255, 255);
+        border: none;
+        cursor: pointer;
+        background-color: transparent;
+      }
+      .option>*{
+        margin:0;
+        padding:0;
+      }
+      div.option{
+        border: none;
+        box-shadow: none;
+        outline: none;
+        width:fit-content
+      }
+      div.option:hover:nth-child(1){
+        background-color: brown;
+      }
+      div.option:hover:not(:nth-child(1)){
+        background-color: rgba(0, 0, 0, 0.233)
+      }
     </style>
   </head>
   <body>
+    <header>
+      <span>icon</span>
+      <span style="color:white">Administrador - AdvogaApp</span>
+      <div class="btns">
+        <div class="option">&#x2715;</div>
+        <div class="option">&square;</div>
+        <div class="option">-</div>
+      </div>
+    </header>
     <div id="root"></div>
   </body>
 </html>

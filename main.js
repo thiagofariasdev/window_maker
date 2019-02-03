@@ -12,9 +12,10 @@ app.on('ready', ()=>{
    
     mw = new BrowserWindow({ 
         minWidth: 800,
-        show:false, 
+        show:false,
+        frame:false, 
         minHeight: 600, 
-        frame:true, 
+        titleBarStyle: 'hidden',
         icon: path.join(__dirname + '/assets/icons/', 'icon.png')
     });
     sw = new BrowserWindow({
@@ -35,6 +36,6 @@ app.on('ready', ()=>{
         sw = null;
         mw.show();
     });
-    mw.loadFile(dpi);
-    mw.setTitle('Administrador - AdvogaApp');
+    // mw.loadFile(dpi);
+    mw.loadURL('http://localhost:3000')
 });
