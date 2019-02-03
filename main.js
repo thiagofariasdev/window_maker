@@ -5,7 +5,7 @@ const
     url = require('url');
 
 let mw, dpi, res, menu, icon;
-dpi = __dirname + '/src/dpi/';
+dpi = __dirname + '/src/build/index.html';
 res = __dirname + '/src/res/';
 icon = url.format({
     pathname: path.join(res, 'icon', 'blue_circle.png'),
@@ -13,7 +13,12 @@ icon = url.format({
 });
 
 app.on('ready', ()=>{
-    mw = new BrowserWindow({ minWidth: 800, minHeight: 600, frame:true });
+    mw = new BrowserWindow({ 
+        minWidth: 800, 
+        minHeight: 600, 
+        frame:true, 
+        icon: path.join(__dirname + '/assets/', 'icon.png')
+    });
     console.log(mw.getBounds())
     mw.on('closed', ()=>{
         mw = null;
@@ -22,5 +27,6 @@ app.on('ready', ()=>{
     mw.on('ready-to-show', ()=>{
         mw.show();
     });
-    mw.loadURL('http://localhost:3000');
+    mw.loadFile(dpi);
+    mw.setTitle('Administrador - AdvogaApp');
 });
