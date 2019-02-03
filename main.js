@@ -4,27 +4,35 @@ const
     path = require('path'),
     url = require('url');
 
-let mw, dpi, res, menu, icon;
+let mw, dpi, sw, loader;
 dpi = __dirname + '/src/build/index.html';
-res = __dirname + '/src/res/';
-icon = url.format({
-    pathname: path.join(res, 'icon', 'blue_circle.png'),
-    protocol: 'file:'
-});
+loader = __dirname + '/src/plan/loader.html';
 
 app.on('ready', ()=>{
+   
     mw = new BrowserWindow({ 
-        minWidth: 800, 
+        minWidth: 800,
+        show:false, 
         minHeight: 600, 
         frame:true, 
-        icon: path.join(__dirname + '/assets/', 'icon.png')
+        icon: path.join(__dirname + '/assets/icons/', 'icon.png')
     });
-    console.log(mw.getBounds())
+    sw = new BrowserWindow({
+        height: 400,
+        width: 400,
+        show: true,
+        frame: false,
+        parent: mw
+    });
+    sw.loadFile(loader);
     mw.on('closed', ()=>{
         mw = null;
+        sw = null;
         process.exit();
     });
     mw.on('ready-to-show', ()=>{
+        sw.close();
+        sw = null;
         mw.show();
     });
     mw.loadFile(dpi);

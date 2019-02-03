@@ -1,11 +1,13 @@
 {
-  "name": "el-native",
+  "name": "advoga",
   "version": "0.0.1",
   "description": "first electron app",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "electron ."
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
   },
   "keywords": [
     "electron",
@@ -15,10 +17,15 @@
   ],
   "author": "tiagofariasdev",
   "license": "ISC",
-  "dependencies": {
-    "bootstrap": "^4.2.1",
+  "build": {
+    "appId": "com.thiago.farias",
+    "win": {
+      "icon": "./assets/icons/icon.png"
+    }
+  },
+  "dependencies": {},
+  "devDependencies": {
     "electron": "^4.0.3",
-    "jquery": "^3.3.1",
-    "popper.js": "^1.14.7"
+    "electron-builder": "^20.38.5"
   }
 }
