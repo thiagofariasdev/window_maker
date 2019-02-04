@@ -8,14 +8,16 @@ let mw, dpi, sw, loader;
 dpi = __dirname + '/src/build/index.html';
 loader = __dirname + '/src/plan/loader.html';
 
+const document = window.document;
+
 app.on('ready', ()=>{
    
     mw = new BrowserWindow({ 
         minWidth: 800,
         show:false,
-        frame:false, 
         minHeight: 600, 
         titleBarStyle: 'hidden',
+        autoHideMenuBar:true,
         icon: path.join(__dirname + '/assets/icons/', 'icon.png')
     });
     sw = new BrowserWindow({

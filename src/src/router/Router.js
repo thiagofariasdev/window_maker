@@ -4,6 +4,9 @@ import Sidebar from '../theme/side';
 const RouteA = () => <h1> TITULO A </h1>;
 const RouteB = () => <h1> TITULO B </h1>;
 const RouteC = () => <h1> TITULO C </h1>;
+const RouteD = () => <h1> TITULO D </h1>;
+const RouteE = () => <h1> TITULO E </h1>;
+const RouteF = () => <h1> TITULO F </h1>;
 
 export default class Routes extends Component {
     constructor(props){
@@ -13,7 +16,8 @@ export default class Routes extends Component {
                 {cur:'/', component:<RouteA/>, title: ' Seu dashboard', icon: 'tachometer-alt'},
                 {cur:'/a', component:<RouteB/>, title: ' Encontre usuários', icon: 'user'},
                 {cur:'/b', component:<RouteC/>, title: ' Monitore o crescimento', icon: 'chart-line'},
-                {cur:'/c', component:<RouteA/>, title: ' Nosso blog', icon: 'blog'}
+                {cur:'/c', component:<RouteD/>, title: ' Nosso blog', icon: 'blog'},
+                {cur:'/d', component:<RouteE/>, title: 'Tickets de usuário', icon:'clipboard-list'}
             ],
             curl: '/',
             wrap:'toggled'
@@ -31,7 +35,10 @@ export default class Routes extends Component {
                         >
                             <i className="fas fa-bars"></i>
                         </button>
-                        <span>{this.state.routes.find(i=>i.cur==this.state.curl).title}</span>
+                        <div>
+                            <span>{this.state.routes.find(i=>i.cur==this.state.curl).title}</span>
+                            <button></button>
+                        </div>
                     </div>
                     {
                         this.state.routes.map((i, id)=>{

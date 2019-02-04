@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './css/sidebar.css';
+import { connect } from 'react-redux';
+import { actions, states } from './../lib/storage';
 
 class Item extends Component {
     render(){
@@ -18,10 +20,21 @@ class Item extends Component {
         )
     }
 }
-export default class Sidebar extends Component {
+class Sidebar extends Component {
     render() {
         return (
             <div id="sidebar-wrapper">
+                <div>
+                    <div style={{padding:30,display:'flex', width:'100%', justifyContent:'center',alignItems:'center',flexDirection:'column'}}>
+                        <img 
+                            height="50" 
+                            width="50" 
+                            style={{borderRadius:25}} 
+                            src={this.props.user.avatar}
+                        />
+                        <span style={{color:'#fff'}}>{this.props.user.name}</span>
+                    </div>
+                </div>
                 <ul className="sidebar-nav">
                     {
                         this.props.routes.map((i, id)=>{
@@ -41,3 +54,5 @@ export default class Sidebar extends Component {
         )
     }
 }
+
+export default connect(states, actions)(Sidebar)
