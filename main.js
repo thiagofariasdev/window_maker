@@ -8,8 +8,6 @@ let mw, dpi, sw, loader;
 dpi = __dirname + '/src/build/index.html';
 loader = __dirname + '/src/plan/loader.html';
 
-const document = window.document;
-
 app.on('ready', ()=>{
    
     mw = new BrowserWindow({ 
@@ -38,6 +36,6 @@ app.on('ready', ()=>{
         sw = null;
         mw.show();
     });
-    // mw.loadFile(dpi);
-    mw.loadURL('http://localhost:3000')
+    mw.loadFile(dpi);
+    // mw.loadURL('http://localhost:3000')
 });

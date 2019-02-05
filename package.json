@@ -21,6 +21,9 @@
     "appId": "com.thiago.farias",
     "win": {
       "icon": "./assets/icons/icon.png"
+    },
+    "linux": {
+      "icon": "./assets/icons/icon.png"
     }
   },
   "dependencies": {},
