@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Sidebar from '../theme/side';
+import FindUser from './find/user_finder';
 
-const RouteA = () => <h1> TITULO A </h1>;
 const RouteB = () => <h1> TITULO B </h1>;
 const RouteC = () => <h1> TITULO C </h1>;
 const RouteD = () => <h1> TITULO D </h1>;
@@ -13,8 +13,8 @@ export default class Routes extends Component {
         super(props);
         this.state = {
             routes:[
-                {cur:'/', component:<RouteA/>, title: ' Seu dashboard', icon: 'tachometer-alt'},
-                {cur:'/a', component:<RouteB/>, title: ' Encontre usuários', icon: 'user'},
+                {cur:'/', component:<RouteB/>, title: ' Seu dashboard', icon: 'tachometer-alt'},
+                {cur:'/a', component:<FindUser/>, title: ' Encontre usuários', icon: 'user'},
                 {cur:'/b', component:<RouteC/>, title: ' Monitore o crescimento', icon: 'chart-line'},
                 {cur:'/c', component:<RouteD/>, title: ' Nosso blog', icon: 'blog'},
                 {cur:'/d', component:<RouteE/>, title: 'Tickets de usuário', icon:'clipboard-list'}
@@ -42,7 +42,7 @@ export default class Routes extends Component {
                     </div>
                     {
                         this.state.routes.map((i, id)=>{
-                            if(i.cur == this.state.curl)
+                            if(i.cur === this.state.curl)
                                 return i.component;
                         })
                     }
