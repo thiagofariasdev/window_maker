@@ -1,11 +1,13 @@
 import axios from 'axios';
 
-export default class Api 
+export default class Net
 {
-    get(){
+    static host = '';
+    static token;
+    static get(){
 
     }
-    post(){
+    static post(){
         
     }
 }
