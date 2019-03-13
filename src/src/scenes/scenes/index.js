@@ -1,5 +1,5 @@
 import FindUser from './find/user_finder';
-import { Create } from "./events";
+import { Create, Event } from "./events";
 import Ticket from './ticket/ticket';
 import Charts from './charts/charts';
 import Blog from './blog/blog';
@@ -10,5 +10,7 @@ export {
     Ticket,
     Charts,
     Blog,
-    Dash
+    Dash,
+    Create,
+    Event
 }

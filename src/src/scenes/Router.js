@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Sidebar from '../theme/side';
-import { FindUser, Ticket, Blog, Charts, Dash } from './scenes';
+import Sidebar from './../res/theme/side';
+import { FindUser, Ticket, Blog, Charts, Dash, Create, Event } from './scenes';
 
 export default class Routes extends Component {
     constructor(props) {
@@ -11,7 +11,8 @@ export default class Routes extends Component {
                 { cur: '/find', component: FindUser, title: ' Encontre usuários', icon: 'user' },
                 { cur: '/chart', component: Charts, title: ' Monitore o crescimento', icon: 'chart-line' },
                 { cur: '/blog', component: Blog, title: ' Nosso blog', icon: 'blog' },
-                { cur: '/ticket', component: Ticket, title: 'Tickets de usuário', icon: 'clipboard-list' }
+                { cur: '/ticket', component: Ticket, title: 'Tickets de usuário', icon: 'clipboard-list' },
+                { cur: '/addEvent', component: Event, title: 'Eventos', subroutes: [], icon: 'calendar-alt' }
             ],
             curl: '/dash',
             wrap: 'toggled'
