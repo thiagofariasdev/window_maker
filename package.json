@@ -7,7 +7,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "electron .",
     "pack": "electron-builder --dir",
-    "dist": "electron-builder"
+    "dist": "electron-builder",
+    "serve": "cd src && yarn start",
+    "dev": "concurrently --kill-others-on-fail \"npm start\" \"npm run serve\""
   },
   "keywords": [
     "electron",
@@ -26,7 +28,9 @@
       "icon": "./assets/icons/icon.png"
     }
   },
-  "dependencies": {},
+  "dependencies": {
+    "concurrently": "^4.1.0"
+  },
   "devDependencies": {
     "electron": "^4.0.3",
     "electron-builder": "^20.38.5"
